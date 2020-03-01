@@ -96,3 +96,12 @@ still be compilable with cmake and make./
 ## How to write a README
 A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
 
+# Reflection
+
+we use PID control to control steering
+
+- P stands for Proportional and is used to steer the car to the center of the road
+- I stands for integral and is used to correct for bias in steering
+- D stands for differential and is used to smoothen the P correction so that it doesn't end up swerving too much
+
+I tuned the parameters of the three coefficients corresponding to PID mentioned above using manual tuning/trial and error. The higher I put the proportional the more swerving there was in the road. The higher I put the D coefficient the slower it took the car to correct. I started with no Integral component but ended up adding a little of this component. I ended up with 0.001 for integral and 0.3 for proportional and 0.6 for differential. I tried putting the differential to 1.5, but then ended in the car not being able to correct the steering and the car ended up out of the track right at the beginning.
